@@ -1,5 +1,10 @@
 # Pretty Good AI Patient Simulator
 
+[![CI](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/ci.yml/badge.svg)](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/ci.yml)
+[![Security](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/security.yml/badge.svg)](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/security.yml)
+[![Performance](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/performance.yml/badge.svg)](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/performance.yml)
+[![Documentation](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/documentation.yml/badge.svg)](https://github.com/JasonStys/pretty-good-ai-engineering-challenge/actions/workflows/documentation.yml)
+
 A Python voice bot that calls **only** Pretty Good AI's assessment line, behaves like a realistic
 synthetic patient, records both sides of each call, produces role-labelled transcripts, and turns
 conversation evidence into a prioritized QA report.
