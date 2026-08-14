@@ -1,0 +1,35 @@
+name: Live submission gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      minimum_calls:
+        description: Minimum distinct completed calls required
+        required: true
+        default: "10"
+  push:
+    branches: [main]
+    paths:
+      - "artifacts/calls/**/manifest.json"
+      - "artifacts/calls/**/recording.mp3"
+      - "artifacts/calls/**/transcript.json"
+
+permissions:
+  contents: read
+
+jobs:
+  verify-live-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: python -m pip install --upgrade "pip>=26.1.2"
+      - run: python -m pip install -e .
+      - name: Validate genuine call evidence
+        env:
+          REQUESTED_MINIMUM: ${{ inputs.minimum_calls || '10' }}
+        run: pgai-voicebot validate --artifact-dir artifacts/calls --minimum-calls "$REQUESTED_MINIMUM"

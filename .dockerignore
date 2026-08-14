@@ -1,0 +1,11 @@
+.git
+.github
+.env
+.venv
+artifacts
+build
+dist
+docs/*.docx
+docs/*.xlsx
+tests
+work

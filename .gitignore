@@ -1,0 +1,23 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+dist/
+build/
+*.egg-info/
+work/
+outputs/
+.DS_Store
+.idea/
+.vscode/
+
+# Live call artifacts can contain voice data. Add only reviewed submission files.
+artifacts/calls/*/raw-events.jsonl
+artifacts/calls/*/*.wav
+artifacts/calls/*/*.json.tmp
